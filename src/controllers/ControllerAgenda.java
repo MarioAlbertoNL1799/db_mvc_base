@@ -107,9 +107,9 @@ public class ControllerAgenda {
      */
     private void jbtn_ultimo_actionPerformed() {
         System.out.println("Action del boton jbtn_ultimo");
-        //invocar al metodo moverUltimoRegistro
-        //mostrar nombre en la vista
-        //mostar email en la vista
+        modelAgenda.moverUltimoRegistro();//invocar al metodo moverUltimoRegistro
+        viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());//mostrar nombre en la vista
+        viewAgenda.jtf_email.setText(modelAgenda.getEmail());//mostar email en la vista
     }
 
     /**
