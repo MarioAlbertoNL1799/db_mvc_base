@@ -117,8 +117,8 @@ public class ControllerAgenda {
      */
     private void jbtn_siguiente_actionPerformed() {
         System.out.println("Action del boton jbtn_siguiente");
-        //invocar al metodo moverSiguienteRegistro
-        //mostrar nombre en la vista
-        //mostar email en la vista
+        modelAgenda.moverSiguienteRegistro();//invocar al metodo moverSiguienteRegistro
+        viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());//mostrar nombre en la vista
+        viewAgenda.jtf_email.setText(modelAgenda.getEmail());//mostar email en la vista
     }
 }
