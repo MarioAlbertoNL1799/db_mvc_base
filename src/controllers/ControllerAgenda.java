@@ -97,9 +97,9 @@ public class ControllerAgenda {
      */
     private void jbtn_anterior_actionPerformed() {
         System.out.println("Action del boton jbtn_anterior");
-        //invocar al metodo moverAnteriorRegistro
-        //mostrar nombre en la vista
-        //mostar email en la vista
+        modelAgenda.moverAnteriorRegistro();//invocar al metodo moverAnteriorRegistro
+        viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());//mostrar nombre en la vista
+        viewAgenda.jtf_email.setText(modelAgenda.getEmail());//mostar email en la vista
     }
 
     /**
