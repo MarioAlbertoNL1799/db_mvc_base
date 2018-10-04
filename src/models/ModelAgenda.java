@@ -70,6 +70,14 @@ public class ModelAgenda {
      */
     public void moverPrimerRegistro(){
         System.out.print("Programa accion moverPrimerRegistro");
+        try{
+            rs.first();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+        }
+        catch(SQLException err){
+            JOptionPane.showMessageDialog(null, "Error ModelAgenda 002: " + err.getMessage());
+        }
     }
     
     /**
