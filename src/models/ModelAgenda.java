@@ -128,5 +128,13 @@ public class ModelAgenda {
      */
     public void moverUltimoRegistro(){
         System.out.print("Programa accion moverUltimoRegistro");
+        try{
+            rs.last();
+            nombre = rs.getString("nombre");
+            email = rs.getString("email");
+        }
+        catch(SQLException err){
+            JOptionPane.showMessageDialog(null, "Error ModelAgenda 005: " +  err.getMessage());
+        }
     }
 }
