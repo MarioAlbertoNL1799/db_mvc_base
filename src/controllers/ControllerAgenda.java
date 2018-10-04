@@ -87,9 +87,9 @@ public class ControllerAgenda {
      */
     private void jbtn_primero_actionPerformed() {
         System.out.println("Action del boton jbtn_primero");
-        //invocar al metodo moverPrimerRegistro
-        //mostrar nombre en la vista
-        //mostar email en la vista
+        modelAgenda.moverPrimerRegistro();//invocar al metodo moverPrimerRegistro
+        viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());//mostrar nombre en la vista
+        viewAgenda.jtf_email.setText(modelAgenda.getEmail());//mostar email en la vista
     }
 
     /**
