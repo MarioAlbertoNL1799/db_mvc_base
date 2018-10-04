@@ -17,6 +17,6 @@ INSERT INTO contactos (nombre, email) VALUES
 
 SELECT * FROM contactos;
 
-CREATE USER 'user_mvc'@'localhost' IDENTIFIED BY 'pass_mvc.2018';
-GRANT ALL PRIVILEGES ON agenda_mvc.* TO 'user_mvc'@'localhost';
+CREATE USER 'MarioNL'@'localhost' IDENTIFIED BY 'MVC122018';
+GRANT ALL PRIVILEGES ON agenda_mvc.* TO 'MarioNL'@'localhost';
 FLUSH PRIVILEGES;
