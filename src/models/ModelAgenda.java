@@ -88,6 +88,16 @@ public class ModelAgenda {
      */
     public void moverSiguienteRegistro(){
         System.out.print("Programa accion moverSiguienteRegistro");
+        try{
+            if(rs.isLast() == false){
+                rs.next();
+                nombre = rs.getString("nombre");
+                email = rs.getString("email");
+            }
+        }
+        catch(SQLException err){
+            JOptionPane.showMessageDialog(null,"Error ModelAgenda003: " + err.getMessage());
+        }
     }
     
     /**
