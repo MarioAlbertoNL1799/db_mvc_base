@@ -167,7 +167,7 @@ public class ControllerAgenda {
      */
     private void jbtn_modificar_actionPerformed(){
         System.out.println("Action del boton jbtn_modificar");
-        
+        habilitar(true);
     }
     
     /**
@@ -175,6 +175,10 @@ public class ControllerAgenda {
      */
     private void jbtn_guardar_actionPerformed(){
         System.out.println("Action del boton jbtn_guardar");
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText());
+        modelAgenda.Modificar();
+        habilitar(false);
     }
     
     /**
