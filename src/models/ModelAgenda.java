@@ -192,8 +192,8 @@ public class ModelAgenda {
      * 4.- Mostrar los datos de el contacto anterior.
      */
     public void Borrrar(){
-        JOptionPane.showConfirmDialog(null, "¿Desea eliminar el registro?");
-        if(JOptionPane.OK_OPTION == 0){
+        int prueba = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el registro?");
+        if(JOptionPane.OK_OPTION == prueba){
             try{
                 id = rs.getInt("id_contacto");
                 st.executeUpdate("delete from contactos where id_contacto =" + id + "; ");
