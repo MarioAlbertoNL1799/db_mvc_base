@@ -79,8 +79,7 @@ public class ControllerAgenda {
         viewAgenda.setLocationRelativeTo(null);
         viewAgenda.setTitle("Agenda MVC");
         viewAgenda.setVisible(true);
-        this.viewAgenda.jtf_email.setEditable(false);
-        this.viewAgenda.jtf_nombre.setEditable(false);
+        habilitar(false);
     }
 
     /**
@@ -142,8 +141,7 @@ public class ControllerAgenda {
      * Método para activar los jtextField y agregar un nuevo registro en la base de datos
      */
     private void jbtn_nuevo_actionPerformed(){    
-        this.viewAgenda.jtf_email.setEditable(true);
-        this.viewAgenda.jtf_nombre.setEditable(true);
+        habilitar(true);
         this.viewAgenda.jtf_nombre.setText(null);
         this.viewAgenda.jtf_email.setText(null);
     }
@@ -174,5 +172,9 @@ public class ControllerAgenda {
      */
     private void jbtn_borrar_actionPerformed(){
         System.out.println("Action del boton jbtn_borrar");
+    }
+    private void habilitar(boolean n){
+       this.viewAgenda.jtf_email.setEditable(n);
+       this.viewAgenda.jtf_nombre.setEditable(n);
     }
 }
