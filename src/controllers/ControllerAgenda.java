@@ -36,6 +36,14 @@ public class ControllerAgenda {
                 jbtn_ultimo_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_nuevo)  {
                 jbtn_nuevo_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_insertar){
+                jbtn_insertar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_borrar){
+                jbtn_borrar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_modificar){
+               jbtn_modificar_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_guardar){
+                jbtn_guardar_actionPerformed();
             }
         }
 
@@ -84,6 +92,10 @@ public class ControllerAgenda {
         viewAgenda.jbtn_siguiente.addActionListener(actionListener);
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
         viewAgenda.jbtn_nuevo.addActionListener(actionListener);
+        viewAgenda.jbtn_insertar.addActionListener(actionListener);
+        viewAgenda.jbtn_modificar.addActionListener(actionListener);
+        viewAgenda.jbtn_guardar.addActionListener(actionListener);
+        viewAgenda.jbtn_borrar.addActionListener(actionListener);
     }
 
     /**
@@ -125,10 +137,42 @@ public class ControllerAgenda {
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());//mostrar nombre en la vista
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());//mostar email en la vista
     }
+    
+    /**
+     * Método para activar los jtextField y agregar un nuevo registro en la base de datos
+     */
     private void jbtn_nuevo_actionPerformed(){    
         this.viewAgenda.jtf_email.setEditable(true);
         this.viewAgenda.jtf_nombre.setEditable(true);
         this.viewAgenda.jtf_nombre.setText(null);
         this.viewAgenda.jtf_email.setText(null);
+    }
+    
+    /**
+     * Método para agregar un registro en la base de datos
+     */
+    private void jbtn_insertar_actionPerformed(){
+        System.out.println("Action del boton jbtn_insertar");
+    }
+    
+    /**
+     *Método para editar un registro existente en la base de datos 
+     */
+    private void jbtn_modificar_actionPerformed(){
+        System.out.println("Action del boton jbtn_modificar");
+    }
+    
+    /**
+     * Método para guardar cambios de un registro existente
+     */
+    private void jbtn_guardar_actionPerformed(){
+        System.out.println("Action del boton jbtn_guardar");
+    }
+    
+    /**
+     * Método para eliminar un registro en la base de datos
+     */
+    private void jbtn_borrar_actionPerformed(){
+        System.out.println("Action del boton jbtn_borrar");
     }
 }
