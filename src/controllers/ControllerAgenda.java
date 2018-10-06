@@ -186,6 +186,7 @@ public class ControllerAgenda {
      */
     private void jbtn_borrar_actionPerformed(){
         System.out.println("Action del boton jbtn_borrar");
+        modelAgenda.Borrrar();
     }
     /**
      * Metodo para habilitar o deshabilitar los jTextField al interactuar con los botones
