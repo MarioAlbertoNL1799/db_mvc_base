@@ -151,6 +151,10 @@ public class ControllerAgenda {
      */
     private void jbtn_insertar_actionPerformed(){
         System.out.println("Action del boton jbtn_insertar");
+        modelAgenda.setNombre(viewAgenda.jtf_nombre.getText());
+        modelAgenda.setEmail(viewAgenda.jtf_email.getText());
+        modelAgenda.Insertar();
+        habilitar(false);
     }
     
     /**
@@ -173,6 +177,10 @@ public class ControllerAgenda {
     private void jbtn_borrar_actionPerformed(){
         System.out.println("Action del boton jbtn_borrar");
     }
+    /**
+     * Metodo para habilitar o deshabilitar los jTextField al interactuar con los botones
+     * @param n 
+     */
     private void habilitar(boolean n){
        this.viewAgenda.jtf_email.setEditable(n);
        this.viewAgenda.jtf_nombre.setEditable(n);

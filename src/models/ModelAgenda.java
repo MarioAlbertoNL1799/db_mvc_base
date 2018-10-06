@@ -145,4 +145,21 @@ public class ModelAgenda {
             JOptionPane.showMessageDialog(null, "Error ModelAgenda 005: " +  err.getMessage());
         }
     }
+    
+    public void Insertar(){
+        try{
+            if ((nombre == null) || (email == null))
+                JOptionPane.showMessageDialog(null, "Necesita ingresar ambos datos");
+            else{
+                nombre = nombre;
+                email = email;
+                st.executeUpdate("Insert into contactos (nombre,email)"+ "values( '"+nombre+"','"+email+"');");
+                JOptionPane.showMessageDialog(null, "Contacto registrado");
+                conectarDB();
+                moverUltimoRegistro();
+            }
+        }catch(SQLException err){
+             JOptionPane.showMessageDialog(null, "Error ModelAgenda 006: " + err.getMessage());
+        }
+    }
 }
