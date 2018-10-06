@@ -148,8 +148,6 @@ public class ModelAgenda {
     
     public void Insertar(){
         try{
-                nombre = nombre;
-                email = email;
                 st.executeUpdate("Insert into contactos (nombre,email)"+ "values( '"+nombre+"','"+email+"');");
                 JOptionPane.showMessageDialog(null, "Contacto registrado");
                 conectarDB();
@@ -159,6 +157,15 @@ public class ModelAgenda {
         }
     }
     public void Modificar(){
-        
+        try{
+            id = rs.getInt("id_contacto");
+            st.executeUpdate("update contactos set nombre = '"+ nombre +"', email = '"+ email +"' where id_contacto = "+ id +"; ");
+            JOptionPane.showMessageDialog(null, "Agenda actualizada");
+            st.executeQuery("select * from contactos");
+            conectarDB();
+            rs.absolute(id);
+        } catch(SQLException err){
+            JOptionPane.showMessageDialog(null,"ErrorModelAgenda 007: " + err.getMessage());
+        }
     }
 }
