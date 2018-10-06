@@ -34,8 +34,9 @@ public class ControllerAgenda {
                 jbtn_siguiente_actionPerformed();
             } else if (e.getSource() == viewAgenda.jbtn_ultimo) {
                 jbtn_ultimo_actionPerformed();
+            } else if (e.getSource() == viewAgenda.jbtn_nuevo)  {
+                jbtn_nuevo_actionPerformed();
             }
-
         }
 
     };
@@ -70,6 +71,8 @@ public class ControllerAgenda {
         viewAgenda.setLocationRelativeTo(null);
         viewAgenda.setTitle("Agenda MVC");
         viewAgenda.setVisible(true);
+        this.viewAgenda.jtf_email.setEditable(false);
+        this.viewAgenda.jtf_nombre.setEditable(false);
     }
 
     /**
@@ -80,6 +83,7 @@ public class ControllerAgenda {
         viewAgenda.jbtn_anterior.addActionListener(actionListener);
         viewAgenda.jbtn_siguiente.addActionListener(actionListener);
         viewAgenda.jbtn_ultimo.addActionListener(actionListener);
+        viewAgenda.jbtn_nuevo.addActionListener(actionListener);
     }
 
     /**
@@ -120,5 +124,11 @@ public class ControllerAgenda {
         modelAgenda.moverSiguienteRegistro();//invocar al metodo moverSiguienteRegistro
         viewAgenda.jtf_nombre.setText(modelAgenda.getNombre());//mostrar nombre en la vista
         viewAgenda.jtf_email.setText(modelAgenda.getEmail());//mostar email en la vista
+    }
+    private void jbtn_nuevo_actionPerformed(){    
+        this.viewAgenda.jtf_email.setEditable(true);
+        this.viewAgenda.jtf_nombre.setEditable(true);
+        this.viewAgenda.jtf_nombre.setText(null);
+        this.viewAgenda.jtf_email.setText(null);
     }
 }
